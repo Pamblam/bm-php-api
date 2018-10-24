@@ -20,7 +20,7 @@ switch($_REQUEST['action']){
 		try{
 			$return['data'] = array('running'=>BrowserMirror::isRunning());
 		}catch(Exception $e){
-			error($e->message);
+			oops($e->message);
 		}
 		output();
 		break;
@@ -29,7 +29,7 @@ switch($_REQUEST['action']){
 		try{
 			$return['data'] = array('logs'=>BrowserMirror::getLogs());
 		}catch(Exception $e){
-			error($e->message);
+			oops($e->message);
 		}
 		output();
 		break;
@@ -39,7 +39,7 @@ switch($_REQUEST['action']){
 			$port = !empty($_REQUEST['port']) && is_integer($_REQUEST['port']) ? $port : 1337;
 			$return['data'] = array('started'=>BrowserMirror::start(), 'port'=>$port);
 		}catch(Exception $e){
-			error($e->message);
+			oops($e->message);
 		}
 		output();
 		break;
@@ -48,7 +48,7 @@ switch($_REQUEST['action']){
 		try{
 			$return['data'] = array('stopped'=>BrowserMirror::stop());
 		}catch(Exception $e){
-			error($e->message);
+			oops($e->message);
 		}
 		output();
 		break;
