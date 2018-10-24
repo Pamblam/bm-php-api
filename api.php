@@ -36,7 +36,8 @@ switch($_REQUEST['action']){
 	
 	case "start_server":
 		try{
-			$return['data'] = array('started'=>BrowserMirror::start());
+			$port = !empty($_REQUEST['port']) && is_integer($_REQUEST['port']) ? $port : 1337;
+			$return['data'] = array('started'=>BrowserMirror::start(), 'port'=>$port);
 		}catch(Exception $e){
 			error($e->message);
 		}
@@ -45,8 +46,7 @@ switch($_REQUEST['action']){
 	
 	case "stop_server":
 		try{
-			$port = !empty($_REQUEST['port']) && is_integer($_REQUEST['port']) ? $port : 1337;
-			$return['data'] = array('started'=>BrowserMirror::start($port), 'port'=>$port);
+			$return['data'] = array('stopped'=>BrowserMirror::stop());
 		}catch(Exception $e){
 			error($e->message);
 		}

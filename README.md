@@ -25,4 +25,4 @@ Finally: Secure it. That is beyond the scope of this project. The `api.php` file
  - `api.php?action=get_status`: Get the status of the BM Server. (Running or not.)
  - `api.php?action=get_logs`: Get an array of containing the dates and messages of each record logged by the server.
  - `api.php?action=start_server&port=1337`: Start the server. The `port` parameter is optional and defaults to 1337.
- - `api.php?action=stop`: Stop the server.
+ - `api.php?action=stop_server`: Stop the server.
