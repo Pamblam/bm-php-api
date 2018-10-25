@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-headers('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *');
 require 'BrowserMirror.php';
 
 BrowserMirror::setBMPath('/path/to/bm-server/bm');
