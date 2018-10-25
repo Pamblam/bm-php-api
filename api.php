@@ -26,7 +26,6 @@ switch($_REQUEST['action']){
 		break;
 	
 	case "get_logs":
-		echo "test"; exit;
 		try{
 			$return['data'] = array('logs'=>BrowserMirror::getLogs());
 		}catch(Exception $e){
