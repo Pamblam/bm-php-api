@@ -87,7 +87,7 @@ class BrowserMirror{
 	
 	public static function getLogs(){
 		$HERE = self::getBasePath();
-		$command = self::run("sudo cat $HERE/logs.txt"); echo "<Pre>"; var_dump($command); exit;
+		$command = self::run("sudo cat $HERE/logs.txt");
 		if(!empty($command['exit_status'])) throw new Exception($command['error'].": ".implode("\n",$command['output']));
 		$logs = array_reverse($command['output']);
 		$filtered = array();
